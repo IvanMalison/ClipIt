@@ -126,10 +126,7 @@ static gboolean item_check(gpointer data) {
   }
   else
   {
-    GdkModifierType button_state;
-    gdk_window_get_pointer(NULL, NULL, NULL, &button_state);
-    /* Proceed if mouse button not being held */
-    if ((primary_temp != NULL) && !(button_state & GDK_BUTTON1_MASK))
+    if ((primary_temp != NULL))
     {
       /* Check if primary is the same as the last entry */
       if (g_strcmp0(primary_temp, primary_text) != 0)
